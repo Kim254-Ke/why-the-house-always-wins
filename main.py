@@ -102,7 +102,8 @@ else:
     print("result_12: ", result_12)
     print(len(result_12))
     print(result_12.count("Y"))
-    print("win_rate(as a percentage): ", (result_12.count("Y")/ len(result_12)))
+    print("win_rate(as a percentage): ", (result_12.count("Y") / len(result_12))) # This shows the win rate in order to compare if it matches with the predefined probability.
+
     uniform_bet_strategy(uniform_strategy_Bankroll_g, Bankroll)
     proportional_bet_strategy(proportional_strategy_Bankroll_g, Bankroll)
 
