@@ -70,9 +70,9 @@ def proportional_bet_strategy(proportional_strategy_Bankroll_g: list[float], Ban
 
 if len(home_odds_list) != len(draw_odds_list) or len(home_odds_list) != len(away_odds_list) or len(
         draw_odds_list) != len(away_odds_list):
-    print("len(draw_odds_list): ", len(draw_odds_list))
-    print("len(home_odds_list): ", len(home_odds_list))
-    print("len(away_odds_list): ", len(away_odds_list))
+    #print("len(draw_odds_list): ", len(draw_odds_list))
+    #print("len(home_odds_list): ", len(home_odds_list))
+    #print("len(away_odds_list): ", len(away_odds_list))
 
     print("ERROR. THE RESPECTIVE LENGTHS DO NOT MATCH.")
 
