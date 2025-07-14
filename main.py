@@ -68,6 +68,25 @@ def proportional_bet_strategy(proportional_strategy_Bankroll_g: list[float], Ban
     return proportional_strategy_Bankroll_g
 
 
+def graph_plotting_function(games_proportional: list, proportional_strategy_Bankroll_g: list, games_uniform: list,
+                            uniform_strategy_Bankroll_g: list):
+    print("plotting begins")
+    plt.figure(figsize=(10, 5), dpi=350)  # High DPI is used for sharpness
+    plt.figure(figsize=(10, 5))
+    plt.plot(games_proportional, proportional_strategy_Bankroll_g, marker='o', linestyle='-', color='red',
+             label='Bankroll', linewidth=1, alpha=1, antialiased=False)
+    plt.plot(games_uniform, uniform_strategy_Bankroll_g, marker='o', linestyle='-', color='blue', label='Bankroll',
+             linewidth=1, alpha=1, antialiased=False)
+    plt.title('Bankroll vs. Number of Games')
+    plt.xlabel('Number of Games')
+    plt.ylabel('Bankroll ($)')
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    print("plotting complete")
+
+
 if len(home_odds_list) != len(draw_odds_list) or len(home_odds_list) != len(away_odds_list) or len(
         draw_odds_list) != len(away_odds_list):
     #print("len(draw_odds_list): ", len(draw_odds_list))
@@ -112,17 +131,4 @@ else:
 
     games_proportional = list(range(1, len(proportional_strategy_Bankroll_g) + 1))
     games_uniform = list(range(1, len(uniform_strategy_Bankroll_g) + 1))
-
-    plt.figure(figsize=(10, 5), dpi=350)  # High DPI is used for sharpness
-    plt.figure(figsize=(10, 5))
-    plt.plot(games_proportional, proportional_strategy_Bankroll_g, marker='o', linestyle='-', color='red',
-             label='Bankroll', linewidth=1, alpha=1, antialiased=False)
-    plt.plot(games_uniform, uniform_strategy_Bankroll_g, marker='o', linestyle='-', color='blue', label='Bankroll',
-             linewidth=1, alpha=1, antialiased=False)
-    plt.title('Bankroll vs. Number of Games')
-    plt.xlabel('Number of Games')
-    plt.ylabel('Bankroll ($)')
-    plt.grid(True)
-    plt.legend()
-    plt.tight_layout()
-    plt.show()
+    graph_plotting_function(games_proportional, proportional_strategy_Bankroll_g, games_uniform, uniform_strategy_Bankroll_g)
